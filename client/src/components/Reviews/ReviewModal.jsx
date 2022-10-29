@@ -150,7 +150,6 @@ const ReviewModal = ({toggle, productId, getReviews, metaData, theme}) => {
               </div>
               <br/>
               <div>Please select an option for each characteristic below <small>*</small></div>
-
               {metaData.characteristics.Size ?
                 <Characteristic
                   char={size}
@@ -160,7 +159,6 @@ const ReviewModal = ({toggle, productId, getReviews, metaData, theme}) => {
                   postableObj={postableObj}
                   charId={metaData.characteristics.Size.id}/>
                 : null}
-
               {metaData.characteristics.Width ?
                 <Characteristic
                   char={width}

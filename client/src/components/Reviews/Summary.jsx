@@ -27,7 +27,7 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-const Summary = ({metaData, reviewsList, setReviewsList, visibleReviews, setVisibleReviews, starsFilter, setStarsFilter, toggleObj, setToggleObj, handleClick, handleSort, handleClearFilter}) => {
+const Summary = ({metaData, reviewsList, setReviewsList, toggleObj, handleClick, handleSort, handleClearFilter}) => {
 
   if (!Object.keys(metaData).length) {
     return null;

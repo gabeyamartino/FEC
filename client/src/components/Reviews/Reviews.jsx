@@ -123,15 +123,11 @@ const Reviews = ({productId, metaData, currentProduct, theme}) => {
     });
   };
 
-
-
   useEffect(() => {
     handleSort();
     setVisibleReviews(starsFilter);
   }, Object.values(toggleObj));
 
-
-  // console.log('VISIBLE REVIEWS', visibleReviews);
   useEffect(() => {
     getReviews(productId);
   }, []);
@@ -147,12 +143,7 @@ const Reviews = ({productId, metaData, currentProduct, theme}) => {
               metaData={metaData}
               reviewsList={reviewsList}
               setReviewsList={setReviewsList}
-              visibleReviews={visibleReviews}
-              setVisibleReviews={setVisibleReviews}
-              starsFilter={starsFilter}
-              setStarsFilter={setStarsFilter}
               toggleObj={toggleObj}
-              setToggleObj={setToggleObj}
               handleClick={handleClick}
               handleSort={handleSort}
               handleClearFilter={handleClearFilter}/>
