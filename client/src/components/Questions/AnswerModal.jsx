@@ -43,7 +43,6 @@ const AnswerModal = (props) => {
 
     openUploadWidget(uploadOptions, (error, photos) => {
       if (!error) {
-        // console.log(photos);
         if (photos.event === 'success') {
 
           setImages([...images, photos.info.url]);
@@ -65,10 +64,9 @@ const AnswerModal = (props) => {
       email: answerEmail,
       photos: images,
       // eslint-disable-next-line camelcase
-      question_id: props.question.question_id //need to add question to props once I know where this goes
+      question_id: props.question.question_id
     })
       .then((res) => {
-        // console.log('response posting answer to server', res.data);
         props.get();
 
         console.log('after submit get');
@@ -77,9 +75,6 @@ const AnswerModal = (props) => {
       .catch((err) => {
         console.log('error posting answer:', err );
       });
-
-    // console.log(images);
-
   };
 
   const onSumbitA = () => {
@@ -116,8 +111,6 @@ const AnswerModal = (props) => {
     }
 
     submitAnswer();
-
-
   };
 
   return (

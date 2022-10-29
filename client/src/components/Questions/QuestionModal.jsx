@@ -38,7 +38,6 @@ const QuestionModal = (props) => {
       product_id: props.product
     })
       .then((res) => {
-        // console.log('response posting question to server', res.data);
         props.close();
       })
       .catch((err) => {

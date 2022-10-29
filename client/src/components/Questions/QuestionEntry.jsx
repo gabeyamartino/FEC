@@ -23,11 +23,9 @@ const QuestionEntry = (props) => {
   const yesClicked = () => {
     if (!clickedBefore) {
       setClickedBefore(!clickedBefore);
-      //axios put request
       axios.put('/qa/questions/:question_id/helpful', {question: props.question.question_id})
         .then((res) => {
           console.log('successfully put question helpful');
-          //maybe get req, but dont want to refresh page or allow to mark helpful again
         })
         .catch((err) => {
           console.log('error putting question helpful: ', err);
@@ -40,7 +38,6 @@ const QuestionEntry = (props) => {
     setAnswerScrollable(!answerScrollable);
     answerScrollable ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll';
   };
-
 
   return (
     <div className="question-entry" data-testid="question">

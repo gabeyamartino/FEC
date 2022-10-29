@@ -31,7 +31,6 @@ const Questions = (props) => {
       }
     })
       .then(results => {
-        // console.log('questions: ', results.data.results);
         let answeredQuestions = results.data.results.filter((question) => { return (Object.keys(question.answers)[0] !== undefined); });
         setQuestions(answeredQuestions);
       })
@@ -62,7 +61,6 @@ const Questions = (props) => {
     let searchedHolder = [];
     let questionDenied = [];
 
-
     questions.forEach((q) => {
       if (q.question_body.toUpperCase().includes(searchQuery.toUpperCase())) {
         searchedHolder.push(q);
@@ -87,7 +85,7 @@ const Questions = (props) => {
           'asker_name': quest.asker_name,
           'question_helpfulness': quest.question_helpfulness,
           'reported': quest.reported,
-          'answers': questAns// all that work to change the answer property
+          'answers': questAns
         };
         searchedHolder.push(qWithSearchedAns);
       }
@@ -106,7 +104,6 @@ const Questions = (props) => {
       setSearchable(!searchable);
     }
   }, [((searchQuery.length > 2) && (searchQuery))]);
-
 
   return (
     <div id="questions" data-testid="questions">
